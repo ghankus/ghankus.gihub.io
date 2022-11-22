@@ -1,15 +1,122 @@
+*{
+    box-sizing: border-box;
+}
+
 body {
     background-color: rgb(139, 199, 179);
+    margin: 0;
 }
 
 nav {
 border: 2px dashed orangered;
+display: flex;
+justify-content: space-between;
+align-items: center;
+position: sticky;
+top: 0;
 }
 /* tagi a mające nava przodka */
 nav a {color:darkgoldenrod;
-border: 2px dashed orange}
+border: 2px dashed orange;
 
-nav a h1 {border: 2px dashed red;}
+}
+
+nav a h1 {border: 2px dashed red;
+padding:0px;
+margin:0px;}
+
+
+nav ul {border:2px dashed blue;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  
+
+    /* Hamburger */
+    position: absolute;
+    width: 40vw;
+    right:calc( -40vw - 2px);
+    top: 100%;
+    transition: .5s;
+}
+
+nav ul li {
+    border:2px dashed red;
+    margin:5px 10px;
+
+}
+/* hamburger elements */
+nav label{
+    border:2px solid teal;
+    width: 2em;
+    height: 2em;
+    margin-right: 5px;
+    position: relative;
+    cursor: pointer;
+
+}
+nav label div{
+    height: 3px;
+    border-radius: 3px;
+background-color: black;
+    position: absolute;
+    width: 80%;
+    left: 10%;
+    transition: .5s;
+}
 
 
 
+
+nav label div:nth-child(1){
+    top:calc( 25% - 1.5px );
+}
+
+nav label div:nth-child(2){
+    top:calc( 50% - 1.5px );
+}
+
+nav label div:nth-child(3){
+    top:calc( 75% - 1.5px );
+}
+
+#toggler{
+    display: none;
+}
+#toggler:checked ~ ul {
+    right: 0;
+}
+
+
+
+#toggler:checked ~ label div:nth-child(1){
+    transform: rotate(45deg);
+    top: calc( 50% - 1.5px );
+}
+
+#toggler:checked ~ label div:nth-child(2){
+    opacity: 0;
+}
+
+#toggler:checked ~ label div:nth-child(3){
+    transform: rotate(-45deg);
+    top: calc( 50% - 1.5px );
+}
+
+
+footer {
+    border: 2px dashed teal;
+    margin-top: 200vh;
+}
+
+
+
+
+
+@media ( min-widh: 768px ) {
+
+    nav label {display: none;}
+
+
+    
+}
