@@ -1,32 +1,52 @@
 *{
     box-sizing: border-box;
 }
+:root{
+    --background-color: #22753C;
+    --foreground-color: #38C264;
+    --shadow-color: #47F57E;
+    --font-color: black;
+    --font-light-color: white;
+    --shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+
+
+
+
+
+}
 
 body {
-    background-color: rgb(139, 199, 179);
+    font-family: 'Bitter', serif;
+    background-color: var(--background-color);
     margin: 0;
 }
 
 nav {
-border: 2px dashed orangered;
+
+background-color: var(--foreground-color);
+box-shadow: var(--shadow);
 display: flex;
 justify-content: space-between;
 align-items: center;
 position: sticky;
 top: 0;
+padding: 0 10px;
 }
 /* tagi a mające nava przodka */
-nav a {color:darkgoldenrod;
-border: 2px dashed orange;
+nav a {color:var(--font-light-color);
+    text-decoration: none;
+
 
 }
 
-nav a h1 {border: 2px dashed red;
+nav a h1 {
 padding:0px;
 margin:0px;}
 
 
-nav ul {border:2px dashed blue;
+nav ul {
+    background-color: var(--shadow-color);
     list-style: none;
     margin: 0;
     padding: 0;
@@ -35,22 +55,26 @@ nav ul {border:2px dashed blue;
     /* Hamburger */
     position: fixed;
     width: 40vw;
-    right:calc( -40vw - 2px);
-    top: 3rem;
-    transition: .5s;
+    right:calc( -40vw - 2px );
+    top: calc( 2em + 20px );
+    height: calc( 100vh - ( 2em + 20px) );
+    transition: .2s;
 }
-
+ 
 nav ul li {
-    border:2px dashed red;
-    margin:5px 10px;
+    color: var(--font-light-color);
+    text-align: right;
+    padding:5px 10px;
+    margin: 10px;
 
 }
 /* hamburger elements */
 nav label{
-    border:2px solid teal;
+    border:2px solid var(--font-light-color); 
+    border-radius:5px ;
     width: 2em;
     height: 2em;
-    margin-right: 5px;
+    margin: 10px 0 ;
     position: relative;
     cursor: pointer;
 
@@ -58,11 +82,11 @@ nav label{
 nav label div{
     height: 3px;
     border-radius: 3px;
-background-color: black;
+background-color: var(--font-light-color);
     position: absolute;
     width: 80%;
     left: 10%;
-    transition: .5s;
+    transition: .2s;
 }
 
 
@@ -113,10 +137,20 @@ footer {
 
 
 
-@media ( min-widh: 768px ) {
+@media ( min-width: 768px ){
+    nav {padding: 1.5rem 3rem;}
 
-    nav label {display: none;}
+    nav label {display: none;
+    }
+  nav ul {
+    position: static; 
+    width: unset;
+    height: unset;
+    display: flex;
+    background-color: transparent;
+  }
+   nav ul li{
+        margin:0;
 
-
-    
+    }
 }
