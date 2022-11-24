@@ -127,9 +127,24 @@ nav label div:nth-child(3){
     top: calc( 50% - 1.5px );
 }
 
+.carousel-section {
+
+    border: 2px dashed red;
+}
+
+.carousel-section > header{
+    border: 2px dashed seashell;
+}
+
+.carousel-outer {
+    border:2px dashed orangered;
+}
+
+.carousel-inner { border:2px dashed rgb(20, 11, 11);
+}
 
 footer {
-    border: 2px dashed teal;
+    border:5px dashed rgb(5, 15, 15);
     margin-top: 200vh;
 }
 
